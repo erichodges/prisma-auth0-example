@@ -18,7 +18,7 @@ class Auth {
     autoclose: true,
     auth: {
       sso: false,
-      redirect: false,
+      redirect: true,
       redirectUrl: AUTH_CONFIG.callbackUrl,
       responseType: 'token id_token',
       audience: `https://${AUTH_CONFIG.domain}/api/v2/`,
