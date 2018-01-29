@@ -18,10 +18,9 @@ class Auth {
     autoclose: true,
     auth: {
       sso: false,
-      redirect: true,
       redirectUrl: AUTH_CONFIG.callbackUrl,
       responseType: 'token id_token',
-      audience: `https://${AUTH_CONFIG.domain}/api/v2/`,
+      audience: `${AUTH_CONFIG.api_audience}`,
       params: {
         scope: `openid profile email user_metadata app_metadata picture`
       }
@@ -84,7 +83,11 @@ class Auth {
           variables: { idToken }
         })
         .then(res => {
-          window.location.reload()
+          if (window.location.href.includes(`callback`)) {
+            window.location.href = '/'
+          } else {
+            window.location.reload()
+          }
         }).catch(err => console.log('Sign in or create account error: ', err))
   }
   logout() {

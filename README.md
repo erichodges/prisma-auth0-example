@@ -16,7 +16,7 @@ If you see any potential security issues, please let me know!
   * [React](https://facebook.github.io/react/): Frontend framework for building user interfaces
   * [Apollo Client](https://github.com/apollographql/apollo-client): Fully-featured, production ready caching GraphQL client
 * **Backend**
-  * [Auth0](http://www.auth0.com): Authentication as a service
+  * [Auth0](http://www.auth0.com): Authentication as a service. (And this demo uses RS256 hotness!)
   * [Prisma](https://www.prismagraphql.com): Turns your database into a GraphQL API
   * [graphql-yoga](https://github.com/graphcool/graphql-yoga/): Fully-featured GraphQL server with focus on easy setup, performance & great developer experience
   * [prisma-binding](https://github.com/graphcool/prisma-binding): [GraphQL binding](https://blog.graph.cool/reusing-composing-graphql-apis-with-graphql-bindings-80a4aa37cff5) for Prisma services
@@ -28,6 +28,7 @@ You need to have the following things installed:
 * Git
 * Node 8+
 * Prisma CLI: `npm i -g prisma`
+* GraphQL CLI `npm i -g graphql-cli`
 * Auth0 account
 
 ## Getting started
@@ -93,7 +94,7 @@ Edit these values with your Auth0 Config
 export const AUTH_CONFIG = {
   domain: 'YOUR_DOMAIN', // e.g. your-domain.auth0.com
   clientId: 'YOUR_CLIENT_ID', // e.g. string of characters from Auth0 for your API
-  callbackUrl: "http://localhost:8000" // make sure Auth0 has http://localhost:8000 as a callback url
+  callbackUrl: "http://localhost:8000/callback" // make sure Auth0 has http://localhost:8000 as a callback url
 }
 ```
 
